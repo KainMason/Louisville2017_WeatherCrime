@@ -16,7 +16,7 @@ This Python script analyzes crime incidents by type and temperature in the year 
 
    ```shell
    pip install pandas matplotlib tkinter
-Place the crime2017.csv and weather.csv files in the same directory as the script file crime_analysis.py. Alternatively, you can modify the file paths in the script to match the locations of your files.
+Place the crime2017.csv and weather.csv files in the same directory as the script file main.py. Alternatively, you can modify the file paths in the script to match the locations of your files.
 Usage
 To run the script and generate the crime analysis visualization:
 
@@ -24,18 +24,34 @@ Open a terminal or command prompt.
 
 Navigate to the directory containing the script file crime_analysis.py and the data files.
 
-Run the following command:
+## Project Plan
 
-shell
-Copy code
-python crime_analysis.py
-This will execute the script and display a tkinter window showing the crime incidents by type and temperature in 2017.
+### Loading Data:
+1. Read two CSV files: one for historical weather data and the other for crime reports in Louisville.
 
-Customization
-You can customize the visualization and analysis by modifying the code:
+### Data Cleaning and Operation:
+1. Clean and preprocess the data, ensuring consistency in formatting and resolving any inconsistencies between the datasets.
+2. Merge the datasets using pandas merge or create a new dataset with combined attributes/columns.
+3. Perform necessary data transformations, feature engineering, or calculations on the merged dataset.
 
-Adjust the figure size and other visual aspects of the plot by modifying the fig, ax parameters in the script.
-Change the filtering criteria for temperatures by modifying the threshold values in the high_temp_data and low_temp_data lines.
-Modify the labels and title of the plot by changing the corresponding strings in the ax.set_xlabel, ax.set_ylabel, and ax.set_title lines.
-Customize the rotation of the x-axis labels by modifying the value in the ax.tick_params line.
-Licens
+### Data Visualization and Presentation:
+1. Create three visualizations using matplotlib, seaborn, or other plotting libraries.
+2. Consider using additional tools like Tableau or pandas pivot table for summarizing the data.
+3. Design the visualizations to be easily understandable by non-technical audiences.
+
+### Best Practices:
+1. Write three unit tests to validate custom functions or classes (if applicable).
+2. Provide instructions for running the unit tests.
+3. Add clear comments to the code for improved readability.
+4. Create a comprehensive README.md file explaining the project, methodology, and dependencies.
+5. Ensure good grammar and formatting in the project documentation.
+6. Provide insights into the coding decisions and their relevance to the project.
+7. Make the project easily understandable for non-technical users.
+
+## Interpretation of Data:
+1. Focus on clear communication skills in the project documentation.
+2. Provide insights into the coding decisions and their relevance to the project.
+3. Make the project easily understandable for non-technical users.
+
+Please use this project plan as a guide to organize your work and ensure a systematic approach to your project.
+
