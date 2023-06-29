@@ -1,7 +1,4 @@
-Certainly! Here's the README in markdown format with copyable text:
 
-markdown
-Copy code
 # Crime Analysis: Crime Incidents by Type and Temperature in 2017
 
 This Python script analyzes crime incidents by type and temperature in the year 2017. It uses data from two CSV files, `crime2017.csv` and `weather.csv`, and visualizes the results in a bar chart using matplotlib and tkinter libraries.
