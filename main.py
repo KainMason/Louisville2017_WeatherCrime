@@ -31,12 +31,12 @@ low_temp_counts = low_temp_data['CRIME_TYPE'].value_counts()
 combined_counts = pd.concat([high_temp_counts, low_temp_counts], axis=1, keys=['High Temperature', 'Low Temperature'])
 
 # Plot the bar chart
-plt.figure(figsize=(10, 6))
-combined_counts.plot(kind='bar')
-plt.xlabel('Crime Type')
-plt.ylabel('Number of Incidents')
-plt.title('Crime Incidents by Type and Temperature in 2017')
-plt.xticks(rotation=90)
-plt.legend()
+plt.figure(figsize=(10, 6))  # Create a figure with specified size
+combined_counts.plot(kind='bar')  # Plot the combined counts as a bar chart
+plt.xlabel('Crime Type')  # Set the x-axis label
+plt.ylabel('Number of Incidents')  # Set the y-axis label
+plt.title('Crime Incidents by Type and Temperature in 2017')  # Set the chart title
+plt.xticks(rotation=90)  # Rotate the x-axis tick labels for better readability
+plt.legend()  # Show the legend
 
-plt.show()
+plt.show()  # Display the chart
