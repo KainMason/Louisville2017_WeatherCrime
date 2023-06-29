@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Read the crime.csv file with specified data types and low_memory=False
-crime_data = pd.read_csv('crime.csv', dtype={'ID': str}, low_memory=False)
+crime_data = pd.read_csv('crime2017.csv', dtype={'ID': str}, low_memory=False)
 
 # Read the weather.csv file
 weather_data = pd.read_csv('weather.csv')
