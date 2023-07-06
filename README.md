@@ -48,10 +48,33 @@ Navigate to the directory containing the script file crime_analysis.py and the d
 3. Make the project easily understandable for non-technical users.
 
 #Data Dictionary:
-##Weather.csv
+## Weather.csv
 | Variable | Description                               | Data Type |
 |----------|-------------------------------------------|-----------|
 | date     | The date of the weather record             | Date      |
 | high     | The highest temperature recorded           | Numeric   |
 | events   | Describes weather events (e.g., rain, fog)  | String    |
+
+## crime2017.csv
+| Variable        | Description                                              | Data Type |
+|-----------------|----------------------------------------------------------|-----------|
+| Unnamed: 0      | Index of the crime record                                | Numeric   |
+| INCIDENT_NUMBER | Unique identifier for each incident                       | String    |
+| DATE_REPORTED   | Date when the incident was reported                       | DateTime  |
+| date            | Date when the incident occurred                          | DateTime  |
+| UOR_DESC        | Uniform Offense Reporting (UOR) description              | String    |
+| CRIME_TYPE      | Type of crime                                            | String    |
+| NIBRS_CODE      | National Incident-Based Reporting System (NIBRS) code     | String    |
+| UCR_HIERARCHY   | Uniform Crime Reporting (UCR) hierarchy code             | String    |
+| ATT_COMP        | Status of the crime (e.g., completed, attempted)          | String    |
+| LMPD_DIVISION   | LMPD division where the crime occurred                   | String    |
+| LMPD_BEAT       | LMPD beat where the crime occurred                       | Numeric   |
+| PREMISE_TYPE    | Type of premises where the crime occurred                | String    |
+| BLOCK_ADDRESS   | Block-level address where the crime occurred             | String    |
+| CITY            | City where the crime occurred                            | String    |
+| ZIP_CODE        | ZIP code where the crime occurred                        | String    |
+| ID              | Unique identifier for each crime record                   | Numeric   |
+| Time To Report in Days | Time elapsed between the incident and its reporting (in days) | Numeric   |
+| YEAR_OCCURED    | Year when the incident occurred                          | Numeric   |
+
 
