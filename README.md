@@ -47,7 +47,7 @@ Navigate to the directory containing the script file crime_analysis.py and the d
 2. Provide insights into the coding decisions and their relevance to the project.
 3. Make the project easily understandable for non-technical users.
 
-#Data Dictionary:
+# Data Dictionary:
 ## Weather.csv
 | Variable | Description                               | Data Type |
 |----------|-------------------------------------------|-----------|
