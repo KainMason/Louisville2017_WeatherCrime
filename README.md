@@ -40,18 +40,18 @@ Navigate to the directory containing the script file crime_analysis.py and the d
 3. Design the visualizations to be easily understandable by non-technical audiences.
 
 ### Best Practices:
-1. Write three unit tests to validate custom functions or classes (if applicable).
-2. Provide instructions for running the unit tests.
-3. Add clear comments to the code for improved readability.
-4. Create a comprehensive README.md file explaining the project, methodology, and dependencies.
-5. Ensure good grammar and formatting in the project documentation.
-6. Provide insights into the coding decisions and their relevance to the project.
-7. Make the project easily understandable for non-technical users.
+1. Create Data Dictionary and put it in readme
 
 ## Interpretation of Data:
 1. Focus on clear communication skills in the project documentation.
 2. Provide insights into the coding decisions and their relevance to the project.
 3. Make the project easily understandable for non-technical users.
 
-Please use this project plan as a guide to organize your work and ensure a systematic approach to your project.
+#Data Dictionary:
+##Weather.csv
+| Variable | Description                               | Data Type |
+|----------|-------------------------------------------|-----------|
+| date     | The date of the weather record             | Date      |
+| high     | The highest temperature recorded           | Numeric   |
+| events   | Describes weather events (e.g., rain, fog)  | String    |
 
