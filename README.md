@@ -94,6 +94,9 @@ While the code uses pandas' pivot table for summarizing crime data, it doesn't i
 
 Overall, the code successfully loads, cleans, and merges the datasets, performs necessary data operations, and creates visualizations that are suitable for non-technical audiences to comprehend the relationship between crime types and weather conditions in Louisville for the year 2017.
 
+**BEST PRACTICES**
+1. data dictionary and .readme file
+
 **Conclusion:**
 
 Based on the analysis of the crime data from Louisville in 2017 and its correlation with weather conditions, we observe the following:
