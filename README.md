@@ -5,24 +5,17 @@ This Python script analyzes crime incidents by type and temperature in the year 
 
 ## Installation
 
-1. Clone this repository or download the script file `crime_analysis.py`.
+1. Clone this repository 
+2. run `main.py`.
 
-2. Ensure that you have the required dependencies installed:
+3. Ensure that you have the required dependencies installed:
    - pandas
    - matplotlib
    - tkinter
 
-   You can install them using pip:
-
-   ```shell
-   pip install pandas matplotlib tkinter
-Place the crime2017.csv and weather.csv files in the same directory as the script file main.py. Alternatively, you can modify the file paths in the script to match the locations of your files.
-Usage
-To run the script and generate the crime analysis visualization:
-
-Open a terminal or command prompt.
-
-Navigate to the directory containing the script file crime_analysis.py and the data files.
+  ## using gui
+  first tab will direct you to each visualization
+  click between each tab to view and the final tab for my conclusion
 
 ## Project Plan
 
@@ -78,3 +71,25 @@ Navigate to the directory containing the script file crime_analysis.py and the d
 | YEAR_OCCURED    | Year when the incident occurred                          | Numeric   |
 
 
+The provided code meets the requirements as follows:
+
+**Loading Data:**
+The code reads two CSV files: one for historical weather data (`weather.csv`) and the other for crime reports in Louisville (`crime2017.csv`).
+
+**Data Cleaning and Operation:**
+The code performs data cleaning for both the weather and crime datasets by dropping NaN values, converting date columns to datetime format, and removing duplicate entries.
+It then merges the crime and weather datasets using pandas' `merge` function based on the common column 'date'.
+The code calculates crime type counts, groups the data by crime type and temperature condition, and creates a pivot table summarizing crime counts by crime type and month.
+
+**Data Visualization and Presentation:**
+The code creates three visualizations using matplotlib:
+
+1. A bar chart of crime types and their counts (`crime_type_counts`).
+2. A bar chart of crime types grouped by temperature conditions (below 50°F and 50°F and above) (`grouped_df`).
+3. A bar chart of crime counts by crime type and month using a pivot table (`pivot_table`).
+
+The charts are designed with clear labeling for easy understanding by non-technical audiences. The x-axis represents categories (crime types), and the y-axis represents counts of crimes. The charts have appropriate titles, axis labels, and grid lines for better presentation.
+
+While the code uses pandas' pivot table for summarizing crime data, it doesn't involve additional tools like Tableau. However, pandas pivot table effectively summarizes the data, and the resulting chart presents crime counts by crime type and month in an easily understandable format.
+
+Overall, the code successfully loads, cleans, and merges the datasets, performs necessary data operations, and creates visualizations that are suitable for non-technical audiences to comprehend the relationship between crime types and weather conditions in Louisville for the year 2017.

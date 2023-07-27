@@ -1,6 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import tkinter as tk
+from tkinter import ttk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 # Read the crime data from crime2017.csv
@@ -32,8 +33,10 @@ grouped_df = combined_df.groupby(['CRIME_TYPE', combined_df['high'] >= 50]).size
 # Create a pivot table to summarize crime count by crime type and month
 pivot_table = crime_df.pivot_table(index='CRIME_TYPE', columns=crime_df['date'].dt.month_name(), aggfunc='size', fill_value=0)
 
-# Function to create and display the bar chart in a tile
-def show_bar_chart(title, data_df):
+# Function to create and display the bar chart in a tab
+def create_chart_tab(notebook, title, data_df):
+    frame = ttk.Frame(notebook)
+    notebook.add(frame, text=title)
     fig, ax = plt.subplots(figsize=(8, 5))
     data_df.plot(kind='bar', ax=ax)
     plt.xlabel('Category')
@@ -41,7 +44,7 @@ def show_bar_chart(title, data_df):
     plt.title(title)
     plt.xticks(rotation=45)
     plt.grid(True)
-    canvas = FigureCanvasTkAgg(fig, master=root)
+    canvas = FigureCanvasTkAgg(fig, master=frame)
     canvas.draw()
     canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
 
@@ -49,13 +52,61 @@ def show_bar_chart(title, data_df):
 root = tk.Tk()
 root.title("Crime Data Analysis")
 
-# Create and display the bar chart of crime types and their counts
-crime_type_counts_chart = show_bar_chart('Crime Types', crime_type_counts)
+# Maximize the window to fill the screen
+root.state('zoomed')
 
-# Create and display the bar chart of crime types grouped by temperature conditions
-grouped_df_chart = show_bar_chart('Number of Crimes by Crime Type and Temperature Condition', grouped_df)
+# Create a tabbed interface
+notebook = ttk.Notebook(root)
 
-# Create and display the pivot table and bar plot showing crime counts by crime type and month
-pivot_table_chart = show_bar_chart('Crime Count by Crime Type and Month', pivot_table)
+# Create and display the Home tab
+home_frame = ttk.Frame(notebook)
+notebook.add(home_frame, text='Home')
+
+# Project information for the Home tab
+project_title_label = ttk.Label(home_frame, text="Louisville 2017 Crime and Weather Analysis", font=("Helvetica", 18, "bold"))
+project_title_label.pack(pady=10)
+project_purpose_label = ttk.Label(home_frame, text="Purpose: The purpose of this project is to analyze the crime data "
+                                                  "from Louisville in 2017 and understand its relationship with "
+                                                  "weather conditions.", font=("Helvetica", 12))
+project_purpose_label.pack(pady=5)
+
+# Information about the graphs for the Home tab
+graphs_info_label = ttk.Label(home_frame, text="Graphs Information:\n\n"
+                                               "1. Crime Types: This bar chart displays the count of each crime type "
+                                               "recorded in Louisville in 2017.\n\n"
+                                               "2. Number of Crimes by Crime Type and Temperature Condition: This "
+                                               "bar chart shows the number of crimes for each crime type based on "
+                                               "temperature conditions (below 50°F and 50°F and above).\n\n"
+                                               "3. Crime Count by Crime Type and Month: This bar chart summarizes "
+                                               "the crime count for each crime type on a month-wise basis.", font=("Helvetica", 12))
+graphs_info_label.pack(pady=5)
+
+# Create and display the chart tabs
+create_chart_tab(notebook, 'Crime Types', crime_type_counts)
+create_chart_tab(notebook, 'Number of Crimes by Crime Type and Temperature Condition', grouped_df)
+create_chart_tab(notebook, 'Crime Count by Crime Type and Month', pivot_table)
+
+# Create the Conclusion tab
+conclusion_frame = ttk.Frame(notebook)
+notebook.add(conclusion_frame, text='Conclusion')
+
+# Analyze data and provide conclusion
+conclusion_text = (
+    "Conclusion:\n\n"
+    "Based on the analysis of the crime data from Louisville in 2017 and its correlation with weather conditions, "
+    "we observe the following:\n\n"
+    "1. Crime Types Occurrence: Most crime types occur more frequently during cooler temperatures (below 50°F) "
+    "compared to temperatures at or above 50°F. The exceptions are certain crime types, such as arson, which may have "
+    "unique factors influencing their occurrences.\n\n"
+    "2. Seasonal Variations: We also notice some seasonal variations in crime counts, with certain crime types "
+    "peaking during specific months. This information could be valuable for law enforcement and city planning.\n\n"
+    "Please note that this analysis is based on the data available for the year 2017, and there could be other "
+    "factors that may influence crime rates. Further research and analysis may be necessary to gain deeper insights."
+)
+
+conclusion_label = ttk.Label(conclusion_frame, text=conclusion_text, font=("Helvetica", 12))
+conclusion_label.pack(pady=10)
+
+notebook.pack(fill=tk.BOTH, expand=1)
 
 root.mainloop()
