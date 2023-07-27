@@ -76,7 +76,7 @@ graphs_info_label = ttk.Label(home_frame, text="Graphs Information:\n\n"
                                                "recorded in Louisville in 2017.\n\n"
                                                "2. Number of Crimes by Crime Type and Temperature Condition: This "
                                                "bar chart shows the number of crimes for each crime type based on "
-                                               "temperature conditions (below 50°F and 50°F and above).\n\n"
+                                               "temperature conditions (below 50°F (FALSE) and 50°F and above(TRUE)).\n\n"
                                                "3. Crime Count by Crime Type and Month: This bar chart summarizes "
                                                "the crime count for each crime type on a month-wise basis.", font=("Helvetica", 12))
 graphs_info_label.pack(pady=5)
