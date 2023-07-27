@@ -71,7 +71,7 @@ This Python script analyzes crime incidents by type and temperature in the year 
 | YEAR_OCCURED    | Year when the incident occurred                          | Numeric   |
 
 
-The provided code meets the requirements as follows:
+The project meets the requirements as follows:
 
 **Loading Data:**
 The code reads two CSV files: one for historical weather data (`weather.csv`) and the other for crime reports in Louisville (`crime2017.csv`).
