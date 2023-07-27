@@ -93,3 +93,13 @@ The charts are designed with clear labeling for easy understanding by non-techni
 While the code uses pandas' pivot table for summarizing crime data, it doesn't involve additional tools like Tableau. However, pandas pivot table effectively summarizes the data, and the resulting chart presents crime counts by crime type and month in an easily understandable format.
 
 Overall, the code successfully loads, cleans, and merges the datasets, performs necessary data operations, and creates visualizations that are suitable for non-technical audiences to comprehend the relationship between crime types and weather conditions in Louisville for the year 2017.
+
+**Conclusion:**
+
+Based on the analysis of the crime data from Louisville in 2017 and its correlation with weather conditions, we observe the following:
+
+1. **Crime Types Occurrence:** Most crime types occur more frequently during cooler temperatures (below 50°F) compared to temperatures at or above 50°F. The exceptions are certain crime types, such as arson, which may have unique factors influencing their occurrences.
+
+2. **Seasonal Variations:** We also notice some seasonal variations in crime counts, with certain crime types peaking during specific months. This information could be valuable for law enforcement and city planning.
+
+Please note that this analysis is based on the data available for the year 2017, and there could be other factors that may influence crime rates. Further research and analysis may be necessary to gain deeper insights.
